@@ -1,30 +1,51 @@
-﻿using System;
+﻿using AllPointsTransport.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace AllPointsTransport.Controllers
 {
-    public class HomeController : BaseController
+    [AuthActionFilter]
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult RateQuotes()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Accounting()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
+        public ActionResult CSRScreen()
+        {
+            return View();
+        }
+
+        public ActionResult Scheduler()
+        {
+            return View();
+        }
+
+        public ActionResult Dispatch()
+        {
+            return View();
+        }
+
+        public ActionResult Inventory()
+        {
+            return View();
+        }
+
+
     }
 }

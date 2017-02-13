@@ -25,21 +25,19 @@ namespace AllPointsTransport.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<APTUserRole> APTUserRoles { get; set; }
+        public virtual DbSet<APTUser> APTUsers { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<DriverPay> DriverPays { get; set; }
         public virtual DbSet<Driver> Drivers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Payroll> Payrolls { get; set; }
+        public virtual DbSet<RolePermission> RolePermissions { get; set; }
         public virtual DbSet<RowColor> RowColors { get; set; }
         public virtual DbSet<RowColorsDriver> RowColorsDrivers { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
+        public virtual DbSet<ScreenMaster> ScreenMasters { get; set; }
         public virtual DbSet<Setting> Settings { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaskManagement> TaskManagements { get; set; }
         public virtual DbSet<TemplatesDriverPay> TemplatesDriverPays { get; set; }
         public virtual DbSet<TemplatesWO> TemplatesWOes { get; set; }
