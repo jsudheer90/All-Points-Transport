@@ -262,7 +262,7 @@
     <Compile Include="Models\WorkOrder.cs">
       <DependentUpon>APTModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\WorkOrderModel.cs" />
+    <Compile Include="Models\WorkOrderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
