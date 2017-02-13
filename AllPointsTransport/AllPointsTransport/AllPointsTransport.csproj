@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -176,8 +178,89 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\APTModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APTModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APTModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APTModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APTModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Driver.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DriverPay.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Payroll.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RowColor.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RowColorsDriver.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Schedule.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Setting.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaskManagement.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TemplatesDriverPay.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TemplatesWO.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TemplatesWOLineItem.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Truck.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WOLineItem.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkOrder.cs">
+      <DependentUpon>APTModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -190,6 +273,23 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\APTModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>APTModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\APTModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>APTModel.edmx</DependentUpon>
+      <LastGenOutput>APTModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\APTModel.edmx.diagram">
+      <DependentUpon>APTModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\APTModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>APTModel.edmx</DependentUpon>
+      <LastGenOutput>APTModel.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\aptftp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -249,6 +349,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
