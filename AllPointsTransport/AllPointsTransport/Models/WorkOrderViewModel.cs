@@ -5,6 +5,7 @@ using System.Web;
 
 namespace AllPointsTransport.Models
 {
+ 
     public class WorkOrderViewModel
     {
     }
