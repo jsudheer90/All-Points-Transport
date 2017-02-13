@@ -11,7 +11,7 @@ using AllPointsTransport.Models;
 namespace AllPointsTransport.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
