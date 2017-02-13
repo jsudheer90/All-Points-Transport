@@ -13,12 +13,12 @@ namespace AllPointsTransport.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("WorkOrders")]
+    
     public partial class WorkOrder
     {
         public int WorkOrderID { get; set; }
         public Nullable<int> WorkOrderNo { get; set; }
-        public Nullable<bool> Completed { get; set; }
+        public bool? Completed { get; set; }
         public string Status { get; set; }
         public System.DateTime InvoicedDate { get; set; }
         public System.DateTime DatePaid { get; set; }
@@ -62,7 +62,7 @@ namespace AllPointsTransport.Models
         public string LinkedProNum { get; set; }
         public string InfoSymbol { get; set; }
         public Nullable<decimal> BilledAmount { get; set; }
-        public Nullable<bool> AcceptedByDispatch { get; set; }
+        public bool? AcceptedByDispatch { get; set; }
         public Nullable<bool> RejectedByDispatch { get; set; }
         public Nullable<bool> POD1 { get; set; }
         public Nullable<bool> POD2 { get; set; }

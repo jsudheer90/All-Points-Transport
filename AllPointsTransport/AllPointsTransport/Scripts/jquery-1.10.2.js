@@ -1,3 +1,4 @@
+/// <reference path="jquery-1.10.2.js" />
 /* NUGET: BEGIN LICENSE TEXT
  *
  * Microsoft grants you the right to use these script files for the sole

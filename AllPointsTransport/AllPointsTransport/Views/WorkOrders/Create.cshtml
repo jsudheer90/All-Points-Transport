@@ -11,15 +11,16 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>WorkOrder</h4>
+   
+      @*@  <h4>WorkOrder</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Completed, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-3">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Completed)
+                   
+                    @Html.CheckBoxFor(model=>model.Completed.Value)
                     @Html.ValidationMessageFor(model => model.Completed, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -27,11 +28,28 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-3">
                 @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
+    <table>    
+        <tr> 
+              
+            <td > @Html.LabelFor(model => model.Pro)</td>
+            <td> @Html.TextBoxFor(model => model.Pro, new { @class = "form-control input-large", id = "txtPro", placeholder = "Enter Pro" })</td>
+            @Html.ValidationMessageFor(model => model.Pro, "", new { @class = "text-danger" })
+        
+            
+            <td> @Html.LabelFor(model => model.Release)</td>
+               
+            <td>@Html.TextBoxFor(model => model.Release, new { @class = "form-control input-large", id = "txtRelease", placeholder = "Enter Release" })</td>
+
+            @Html.ValidationMessageFor(model => model.Release, "", new { @class = "text-danger" })
+        
+    
+    </tr>
+    </table>
 
         <div class="form-group">
             @Html.LabelFor(model => model.InvoicedDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -147,13 +165,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Pro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Pro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pro, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.ApptNumber, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -163,14 +175,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Release, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Release, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Release, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+       
         <div class="form-group">
             @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -476,7 +481,7 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    
 }
 
 <div>
