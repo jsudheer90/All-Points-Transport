@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AllPointsTransportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APTUserRoles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="APTUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Company" Type="nvarchar" MaxLength="255" />
+    <Property Name="BillTo" Type="bit" />
+    <Property Name="Broker" Type="bit" />
+    <Property Name="EquipmentProvider" Type="bit" />
+    <Property Name="ChassisProvider" Type="bit" />
+    <Property Name="Location" Type="bit" />
+    <Property Name="RailPort" Type="bit" />
+    <Property Name="CYDepot" Type="bit" />
+    <Property Name="DallasDY" Type="bit" />
+    <Property Name="FtWorthDY" Type="bit" />
+    <Property Name="Vendor" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Contact1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email1" Type="nvarchar(max)" />
+    <Property Name="Contact2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email2" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="255" />
+    <Property Name="BillingCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCType" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCExpiration" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCSecurityCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCCardholder" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCBillingStreet" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCBillingZip" Type="nvarchar" MaxLength="255" />
+    <Property Name="MC" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="TotalCredit" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DriverPays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkOrder" Type="int" />
+    <Property Name="RowOrder" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="ToDispatch" Type="bit" />
+    <Property Name="ActiveLeg" Type="bit" />
+    <Property Name="TypeOfLoad" Type="nvarchar" MaxLength="255" />
+    <Property Name="PayType" Type="nvarchar" MaxLength="255" />
+    <Property Name="DispatchNotes" Type="nvarchar" MaxLength="255" />
+    <Property Name="ApptTime" Type="datetime" />
+    <Property Name="DetentionStarts" Type="datetime" />
+    <Property Name="DepartTime" Type="datetime" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="LineHaulAmountTruck" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="FSAmountTruck" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAmountTruck" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAmountEmployee" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+    <Property Name="DriverRowID" Type="int" />
+    <Property Name="DriverType" Type="nvarchar" MaxLength="255" />
+    <Property Name="TruckNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="TruckPayPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="FSDeductionPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="EmployeePayPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Origin" Type="nvarchar" MaxLength="255" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="255" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="PrePlanSent" Type="bit" />
+    <Property Name="CancelSent" Type="bit" />
+    <Property Name="DispatchAcceptedStatus" Type="nvarchar" MaxLength="255" />
+    <Property Name="WayBilled" Type="bit" />
+    <Property Name="PayDriver" Type="bit" />
+    <Property Name="Outgate" Type="bit" />
+    <Property Name="Ingate" Type="bit" />
+    <Property Name="POD" Type="bit" />
+    <Property Name="BOL" Type="bit" />
+    <Property Name="ReceivedDate" Type="datetime" />
+    <Property Name="DriverPaid" Type="bit" />
+    <Property Name="CommissionPaid" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Drivers">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="DriverType" Type="nvarchar" MaxLength="255" />
+    <Property Name="EmployeePayPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="255" />
+    <Property Name="HomePhone" Type="nvarchar" MaxLength="255" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="TextMessage" Type="nvarchar" MaxLength="255" />
+    <Property Name="EmergencyContact" Type="nvarchar" MaxLength="255" />
+    <Property Name="EmergencyPhone" Type="nvarchar" MaxLength="255" />
+    <Property Name="SSNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="255" />
+    <Property Name="CDLNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="CDLExpiration" Type="datetime" />
+    <Property Name="MedicalExpiration" Type="datetime" />
+    <Property Name="TWICExpiration" Type="datetime" />
+    <Property Name="AnnualReview" Type="datetime" />
+    <Property Name="HireDate" Type="datetime" />
+    <Property Name="ResignDate" Type="datetime" />
+    <Property Name="ResignReason" Type="nvarchar(max)" />
+    <Property Name="Rehire" Type="bit" />
+    <Property Name="FuelCardNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="TruckNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="Color" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeNo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Disabled" Type="bit" />
+    <Property Name="Username" Type="nvarchar" MaxLength="255" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" />
+    <Property Name="First" Type="nvarchar" MaxLength="255" />
+    <Property Name="Last" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="255" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="SSNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hourly" Type="nvarchar" MaxLength="255" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Supervisor" Type="bit" />
+    <Property Name="scrContacts" Type="bit" />
+    <Property Name="scrDrivers" Type="bit" />
+    <Property Name="scrEmployees" Type="bit" />
+    <Property Name="scrTrucks" Type="bit" />
+    <Property Name="scrPayroll" Type="bit" />
+    <Property Name="scrWorkOrders" Type="bit" />
+    <Property Name="scrTakePayments" Type="bit" />
+    <Property Name="scrPaymentTypeReport" Type="bit" />
+    <Property Name="scrMaintenance" Type="bit" />
+    <Property Name="scrReminders" Type="bit" />
+    <Property Name="scrInvoiceReport" Type="bit" />
+    <Property Name="scrFuelReport" Type="bit" />
+    <Property Name="scrProfitLossReport" Type="bit" />
+    <Property Name="scrMonthlyProfitLossReport" Type="bit" />
+    <Property Name="scrProfitLossReportTruck" Type="bit" />
+    <Property Name="scrTrailers" Type="bit" />
+    <Property Name="scrTripLog" Type="bit" />
+    <Property Name="scrFuelExpenseLog" Type="bit" />
+    <Property Name="scrTripReport" Type="bit" />
+    <Property Name="scrPrePayrollReport" Type="bit" />
+    <Property Name="scrPayrollReport" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Payrolls">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+    <Property Name="PayDate" Type="datetime" />
+    <Property Name="PayPeriodStart" Type="datetime" />
+    <Property Name="PayPeriodEnd" Type="datetime" />
+    <Property Name="Freight" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Fuel" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Deductions" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Total" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RolePermission">
+    <Key>
+      <PropertyRef Name="PermissionId" />
+    </Key>
+    <Property Name="PermissionId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="ScreenId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="RowColors">
+    <Key>
+      <PropertyRef Name="WorkOrder" />
+    </Key>
+    <Property Name="WorkOrder" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="255" />
+    <Property Name="Screen" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RowColorsDrivers">
+    <Key>
+      <PropertyRef Name="Driver" />
+    </Key>
+    <Property Name="Driver" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Tab" Type="nvarchar" MaxLength="100" />
+    <Property Name="Color" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Schedules">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MondayDate" Type="datetime" />
+    <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+    <Property Name="MondayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="MondayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="TuesdayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="TuesdayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="WednesdayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="WednesdayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThursdayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThursdayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="FridayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="FridayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="SaturdayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="SaturdayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="SundayLocal" Type="nvarchar" MaxLength="255" />
+    <Property Name="SundayRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ScreenMaster">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="int" Nullable="false" />
+    <Property Name="ScreenName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Item" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TaskManagements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssignedTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Priority" Type="nvarchar" MaxLength="255" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="ProNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="Task" Type="nvarchar(max)" />
+    <Property Name="Complete" Type="bit" />
+    <Property Name="CompletedTimeStamp" Type="datetime" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TemplatesDriverPays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="RowOrder" Type="int" />
+    <Property Name="ToDispatch" Type="bit" />
+    <Property Name="ActiveLeg" Type="bit" />
+    <Property Name="TypeOfLoad" Type="nvarchar" MaxLength="255" />
+    <Property Name="PayType" Type="nvarchar" MaxLength="255" />
+    <Property Name="DispatchNotes" Type="nvarchar" MaxLength="255" />
+    <Property Name="ApptTime" Type="datetime" />
+    <Property Name="DetentionStarts" Type="datetime" />
+    <Property Name="DepartTime" Type="nvarchar" MaxLength="255" />
+    <Property Name="ArrivalTime" Type="nvarchar" MaxLength="255" />
+    <Property Name="LineHaulAmountTruck" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="FSAmountTruck" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAmountTruck" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAmountEmployee" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+    <Property Name="DriverRowID" Type="int" />
+    <Property Name="DriverType" Type="nvarchar" MaxLength="255" />
+    <Property Name="TruckNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="TruckPayPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="FSDeductionPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="EmployeePayPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Origin" Type="nvarchar" MaxLength="255" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="255" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="PrePlanSent" Type="bit" />
+    <Property Name="DispatchAcceptedStatus" Type="nvarchar" MaxLength="255" />
+    <Property Name="WayBilled" Type="bit" />
+    <Property Name="PayDriver" Type="bit" />
+    <Property Name="Outgate" Type="bit" />
+    <Property Name="Ingate" Type="bit" />
+    <Property Name="POD" Type="bit" />
+    <Property Name="BOL" Type="bit" />
+    <Property Name="ReceivedDate" Type="datetime" />
+    <Property Name="DriverPaid" Type="bit" />
+    <Property Name="CommissionPaid" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TemplatesWOes">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TemplateName" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="BillTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Broker" Type="nvarchar" MaxLength="255" />
+    <Property Name="TypeOfMove" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentProvider" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentSize" Type="nvarchar" MaxLength="255" />
+    <Property Name="ChassisProvider" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentPickup" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentReturn" Type="nvarchar" MaxLength="255" />
+    <Property Name="LocationHours" Type="nvarchar" MaxLength="255" />
+    <Property Name="Origin" Type="nvarchar" MaxLength="255" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TemplatesWOLineItems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="255" />
+    <Property Name="RowOrder" Type="int" />
+    <Property Name="BillingItem" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+    <Property Name="VendorReference" Type="nvarchar" MaxLength="255" />
+    <Property Name="Quantity" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Rate" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Amount" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Fee" Type="bit" />
+    <Property Name="PayDriver" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Trucks">
+    <Key>
+      <PropertyRef Name="TruckNum" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="TruckNum" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Year" Type="nvarchar" MaxLength="255" />
+    <Property Name="Make" Type="nvarchar" MaxLength="255" />
+    <Property Name="Model" Type="nvarchar" MaxLength="255" />
+    <Property Name="VIN" Type="nvarchar" MaxLength="255" />
+    <Property Name="LicensePlate" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Color" Type="nvarchar" MaxLength="255" />
+    <Property Name="TitleOwner" Type="nvarchar" MaxLength="255" />
+    <Property Name="TruckPayPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="FSDeductionPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Referral" Type="nvarchar" MaxLength="255" />
+    <Property Name="ReferralPct" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="WOLineItems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkOrder" Type="int" />
+    <Property Name="RowOrder" Type="int" />
+    <Property Name="BillingItem" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+    <Property Name="VendorReference" Type="nvarchar" MaxLength="255" />
+    <Property Name="Quantity" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Rate" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Amount" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="Fee" Type="bit" />
+    <Property Name="PayDriver" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="WorkOrders">
+    <Key>
+      <PropertyRef Name="WorkOrderID" />
+    </Key>
+    <Property Name="WorkOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Completed" Type="bit" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
+    <Property Name="InvoicedDate" Type="datetime" Nullable="false" />
+    <Property Name="DatePaid" Type="datetime" Nullable="false" />
+    <Property Name="Broker" Type="nvarchar" MaxLength="255" />
+    <Property Name="BillTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Container1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seal" Type="nvarchar" MaxLength="255" />
+    <Property Name="StreetTurn" Type="bit" />
+    <Property Name="EquipmentSize" Type="nvarchar" MaxLength="255" />
+    <Property Name="Chassis" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentProvider" Type="nvarchar" MaxLength="255" />
+    <Property Name="ChassisProvider" Type="nvarchar" MaxLength="255" />
+    <Property Name="Booking" Type="nvarchar" MaxLength="255" />
+    <Property Name="MasterBOL" Type="nvarchar" MaxLength="255" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pro" Type="nvarchar" MaxLength="255" />
+    <Property Name="ApptNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="Release" Type="nvarchar" MaxLength="255" />
+    <Property Name="Weight" Type="nvarchar" MaxLength="255" />
+    <Property Name="PieceCount" Type="nvarchar" MaxLength="255" />
+    <Property Name="Commodity" Type="nvarchar" MaxLength="255" />
+    <Property Name="PO" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentPickup" Type="nvarchar" MaxLength="255" />
+    <Property Name="EquipmentReturn" Type="nvarchar" MaxLength="255" />
+    <Property Name="Origin" Type="nvarchar" MaxLength="255" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="255" />
+    <Property Name="TypeOfMove" Type="nvarchar" MaxLength="255" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="StorageLFD" Type="datetime" Nullable="false" />
+    <Property Name="PerDiemLFD" Type="datetime" />
+    <Property Name="Cutoff" Type="datetime" Nullable="false" />
+    <Property Name="ApptTime" Type="datetime" Nullable="false" />
+    <Property Name="Container2" Type="nvarchar" MaxLength="255" />
+    <Property Name="LocationHours" Type="nvarchar" MaxLength="255" />
+    <Property Name="OutgateReceipt" Type="datetime" />
+    <Property Name="IngateReceipt" Type="datetime" />
+    <Property Name="ReadyNotification" Type="datetime" />
+    <Property Name="NotesInvoice" Type="nvarchar(max)" />
+    <Property Name="NotesPrivate" Type="nvarchar(max)" />
+    <Property Name="ETA" Type="datetime" />
+    <Property Name="LinkedProNum" Type="nvarchar" MaxLength="255" />
+    <Property Name="InfoSymbol" Type="nvarchar" MaxLength="255" />
+    <Property Name="BilledAmount" Type="decimal" Precision="19" Scale="4" />
+    <Property Name="AcceptedByDispatch" Type="bit" />
+    <Property Name="RejectedByDispatch" Type="bit" />
+    <Property Name="POD1" Type="bit" />
+    <Property Name="POD2" Type="bit" />
+    <Property Name="BOL" Type="bit" />
+    <Property Name="Uploaded" Type="bit" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="WorkOrderNo" Type="int" />
+  </EntityType>
+  <Association Name="FK_APTUserRoles">
+    <End Role="APTUserRoles" Type="Self.APTUserRoles" Multiplicity="0..1" />
+    <End Role="RolePermission" Type="Self.RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APTUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScreenMaster">
+    <End Role="ScreenMaster" Type="Self.ScreenMaster" Multiplicity="1" />
+    <End Role="RolePermission" Type="Self.RolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScreenMaster">
+        <PropertyRef Name="ScreenId" />
+      </Principal>
+      <Dependent Role="RolePermission">
+        <PropertyRef Name="ScreenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AllPointsTransportModelStoreContainer">
+    <EntitySet Name="APTUserRoles" EntityType="Self.APTUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APTUsers" EntityType="Self.APTUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DriverPays" EntityType="Self.DriverPays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payrolls" EntityType="Self.Payrolls" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolePermission" EntityType="Self.RolePermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RowColors" EntityType="Self.RowColors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RowColorsDrivers" EntityType="Self.RowColorsDrivers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScreenMaster" EntityType="Self.ScreenMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskManagements" EntityType="Self.TaskManagements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplatesDriverPays" EntityType="Self.TemplatesDriverPays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplatesWOes" EntityType="Self.TemplatesWOes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TemplatesWOLineItems" EntityType="Self.TemplatesWOLineItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trucks" EntityType="Self.Trucks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WOLineItems" EntityType="Self.WOLineItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrders" EntityType="Self.WorkOrders" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_APTUserRoles" Association="Self.FK_APTUserRoles">
+      <End Role="APTUserRoles" EntitySet="APTUserRoles" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScreenMaster" Association="Self.FK_ScreenMaster">
+      <End Role="ScreenMaster" EntitySet="ScreenMaster" />
+      <End Role="RolePermission" EntitySet="RolePermission" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
