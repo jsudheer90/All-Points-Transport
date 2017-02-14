@@ -118,4 +118,3 @@ C:\Bingi\All-Points-Transport\AllPointsTransport\AllPointsTransport\bin\Microsof
 C:\Bingi\All-Points-Transport\AllPointsTransport\AllPointsTransport\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Bingi\All-Points-Transport\AllPointsTransport\AllPointsTransport\obj\Debug\AllPointsTransport.dll
 C:\Bingi\All-Points-Transport\AllPointsTransport\AllPointsTransport\obj\Debug\AllPointsTransport.pdb
-C:\Bingi\All-Points-Transport\AllPointsTransport\AllPointsTransport\obj\Debug\AllPointsTransport.csprojResolveAssemblyReference.cache

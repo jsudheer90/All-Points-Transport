@@ -402,6 +402,7 @@
     <Content Include="Views\Home\Scheduler.cshtml" />
     <Content Include="Views\Home\CSRScreen.cshtml" />
     <Content Include="Views\Home\Accounting.cshtml" />
+    <Content Include="Views\Home\RateQuotes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
